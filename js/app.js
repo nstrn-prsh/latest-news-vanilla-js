@@ -1,4 +1,5 @@
 // class
+const ui= new UI()
 
 // listeners
 listeners();
@@ -16,6 +17,6 @@ function search(e) {
     if (newsName !== '' || country !== '' || category !=='' ) {
         console.log('true');
     } else {
-        console.log('false');
+        ui.printMessage('pls enter one parameter', 'text-center alert alert-danger mt-4')
     }
 }
