@@ -1,6 +1,6 @@
 class News {
      constructor() {
-          this.APIKey = 'f99f4ebf3fc747b7be6e5ecee4e4a0b9';
+          this.APIkey = 'f99f4ebf3fc747b7be6e5ecee4e4a0b9';
      }
 
      // send url to the api
@@ -12,7 +12,7 @@ class News {
           // q=tesla&
           // sortBy=publishedAt&
           // apiKey=f99f4ebf3fc747b7be6e5ecee4e4a0b9
-          let url = `https://newsapi.org/v2/`;
+          let url = 'https://newsapi.org/v2/'
 
           //   everything or top-headlines?
           if (country === "" && category === "") url += "everything?";
@@ -21,7 +21,7 @@ class News {
           if (newsName !== "") url += `q= ${newsName}&`;
           if (country !== "") url += `country= ${country}&`;
           if (category !== "") url += `category= ${category}&`;
-          url += `apiKey= ${this.APIKey}`;
+          url += `apiKey= ${this.APIkey}`;
 
           //   using url
           const newsRes = await fetch(url);

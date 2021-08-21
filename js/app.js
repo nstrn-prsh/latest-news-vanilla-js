@@ -16,9 +16,17 @@ function search(e) {
      const category = document.querySelector("#category").value;
 
      if (newsName !== "" || country !== "" || category !== "") {
-          newsApi.queryAPI(newsName, country, category).then(news=>{
-              console.log(news);
-          })
+          newsApi.queryAPI(newsName, country, category).then((news) => {
+               const newsArray = news.news.articles;
+               if (newsArray.length > 0) {
+                   ui.showNews(newsArray)
+               } else {
+                    ui.printMessage(
+                         "no result! change filters",
+                         "text-center alert alert-danger mt-4"
+                    );
+               }
+          });
      } else {
           // methode printMessage ro toye class UI dorost kardim va inja azash estefade mikonim
           ui.printMessage(
