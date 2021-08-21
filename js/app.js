@@ -16,7 +16,9 @@ function search(e) {
      const category = document.querySelector("#category").value;
 
      if (newsName !== "" || country !== "" || category !== "") {
-          newsApi.queryAPI(newsName, country, category);
+          newsApi.queryAPI(newsName, country, category).then(news=>{
+              console.log(news);
+          })
      } else {
           // methode printMessage ro toye class UI dorost kardim va inja azash estefade mikonim
           ui.printMessage(
